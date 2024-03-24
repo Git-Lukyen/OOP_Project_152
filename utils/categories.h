@@ -1,3 +1,7 @@
+#ifndef AVIZIER_CATEGORIES
+
+#define AVIZIER_CATEGORIES
+
 #include <string>
 #include <map>
 
@@ -38,3 +42,5 @@ namespace avizier {
         return skill_category_string_name[category];
     }
 }
+
+#endif //AVIZIER_CATEGORIES

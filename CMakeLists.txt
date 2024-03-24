@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(OOP_Project_152 main.cpp
         utils/user.h
-        utils/categories.h)
+        utils/categories.h
+        avizier.h
+        utils/post.h)
