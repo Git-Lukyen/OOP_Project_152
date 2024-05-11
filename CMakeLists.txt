@@ -7,4 +7,5 @@ add_executable(OOP_Project_152 main.cpp
         utils/user.h
         utils/categories.h
         avizier.h
-        utils/post.h)
+        utils/post.h
+        utils/exceptions.h)

@@ -19,6 +19,13 @@ namespace avizier {
         std::unordered_set<skill_category> skills;
         time_t register_date;
 
+    protected:
+        int followers;
+
+        int get_followers() {
+            return this->followers;
+        }
+
     public:
         void set_name(std::string &new_name) {
             username = new_name;
@@ -89,6 +96,15 @@ namespace avizier {
         bool operator==(const User &user) const {
             return this->username == user.username;
         };
+    };
+
+    class Editor : public User {
+    private:
+        int nr_posts_created = 0;
+        bool is_verified = false;
+
+    public:
+        Editor(short unsigned int &age) : User(age) {}
     };
 
     class UserManager {

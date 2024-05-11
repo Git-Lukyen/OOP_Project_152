@@ -7,6 +7,8 @@ using namespace avizier;
 
 
 int main() {
+    // Cerinta 1
+
     std::ofstream output_file("output.txt");
     std::ostream &output_stream = std::cout;
 
@@ -28,7 +30,8 @@ int main() {
                       std::unordered_set<post_category>{internship, job},
                       std::unordered_set<skill_category>{c, cpp, problem_solving});
 
-    Post post2 = Post(std::string("Esti student si vrei sa inveti si pe timp de vara? Inscrie-te la summer camp-ul de invatat python."),
+    Post post2 = Post(std::string(
+                              "Esti student si vrei sa inveti si pe timp de vara? Inscrie-te la summer camp-ul de invatat python."),
                       std::unordered_set<post_category>{summer_camp, workshop},
                       std::unordered_set<skill_category>{python, docker});
 
@@ -50,5 +53,21 @@ int main() {
 
     output_stream << "\n==== FIRST USER IS " << userManager.get_user(0)->get_username() << " ====\n";
     output_stream << (User &) userManager.get_user(0).value();
+
+    output_stream << "\n";
+
+    // Cerinta 2
+    JobPosting jobPosting1 = JobPosting(std::string("Google cauta un Software Engineer Junior."),
+                                        std::unordered_set<post_category>{job},
+                                        std::unordered_set<skill_category>{docker, java, data_bases},
+                                        std::string("\n- 1+ years of experience\n- good knowledge of data bases"),
+                                        int(6500),
+                                        time(nullptr));
+
+    // A case of upcasting
+    Post *upcastJobPosting = &jobPosting1;
+    output_stream << *upcastJobPosting;
+    jobPosting1.print_extra_info(output_stream);
+
     return 0;
 }
