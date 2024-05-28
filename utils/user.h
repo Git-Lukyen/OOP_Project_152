@@ -8,6 +8,7 @@
 #include <set>
 #include <optional>
 #include <unordered_set>
+#include <algorithm>
 #include "categories.h"
 
 namespace avizier {
@@ -116,6 +117,15 @@ namespace avizier {
 
         std::vector<User> get_users() {
             return users;
+        }
+
+        void sort_users_name(bool reverse_sort = false) {
+            sort(users.begin(), users.end(), [&](const User &user1, const User &user2) {
+                return user1.get_username() <= user2.get_username();
+            });
+
+            if (reverse_sort)
+                reverse(users.begin(), users.end());
         }
 
         std::optional<User> get_user(int index) {

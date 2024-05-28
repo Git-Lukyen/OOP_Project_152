@@ -69,5 +69,7 @@ int main() {
     output_stream << *upcastJobPosting;
     jobPosting1.print_extra_info(output_stream);
 
+    userManager.sort_users_name();
+
     return 0;
 }
